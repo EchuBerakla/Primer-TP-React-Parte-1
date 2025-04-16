@@ -1,0 +1,17 @@
+.cita {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  button {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 6px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
