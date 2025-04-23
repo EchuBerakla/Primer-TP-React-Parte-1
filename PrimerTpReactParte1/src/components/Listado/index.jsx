@@ -1,15 +1,36 @@
-import Cita from './Cita';
 import './Listado.css';
+import Cita from './Cita';
 
-const Listado = ({ citas, eliminarCita }) => {
+const Listado = () => {
   return (
-    <div className={styles.listado}>
-      <h2>ADMINISTRA TUS CITAS</h2>
-      {citas.map((cita, index) => (
-        <Cita key={index} cita={cita} onEliminar={() => eliminarCita(index)} />
-      ))}
+    <div class="one-half column">
+      <h2>Administra tus citas</h2>
+      <div class="lista-citas">
+        <Cita
+          nombre="Nina"
+          propietario="Martin"
+          fecha="2021-08-05"
+          hora="08:20"
+          sintomas="Le duele la pierna"
+        />
+        <Cita
+          nombre="Sifon"
+          propietario="Flecha"
+          fecha="2023-08-05"
+          hora="09:24"
+          sintomas="Duerme mucho"
+        />
+        <Cita
+          nombre="Floki"
+          propietario="Ari"
+          fecha="2023-08-05"
+          hora="16:15"
+          sintomas="No está comiendo"
+        />
+      </div>
     </div>
   );
 };
 
 export default Listado;
+

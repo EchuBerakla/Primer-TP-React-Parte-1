@@ -7,7 +7,7 @@ function App() {
   const [citas, setCitas] = useState([]);
 
   const agregarCita = (cita) => {
-    setCitas([...citas, cita]);
+    setCitas([citas, cita]);
   };
 
   const eliminarCita = (index) => {
@@ -16,12 +16,14 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <div class="container">
+    <div class="row">
       <h1>ADMINISTRADOR DE PACIENTES</h1>
       <div className="contenido">
         <Formulario agregarCita={agregarCita} />
         <Listado citas={citas} eliminarCita={eliminarCita} />
       </div>
+    </div>
     </div>
   );
 }
