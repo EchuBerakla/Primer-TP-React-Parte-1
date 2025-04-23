@@ -5,7 +5,6 @@ const Listado = () => {
   return (
     <div class="one-half column">
       <h2>Administra tus citas</h2>
-      <div class="lista-citas">
         <Cita
           nombre="Nina"
           propietario="Martin"
@@ -27,7 +26,6 @@ const Listado = () => {
           hora="16:15"
           sintomas="No está comiendo"
         />
-      </div>
     </div>
   );
 };
