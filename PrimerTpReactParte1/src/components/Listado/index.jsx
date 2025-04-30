@@ -1,34 +1,38 @@
 import './Listado.css';
 import Cita from './Cita';
 
-const Listado = () => {
+const Listado = ({ citas, setCitas }) => {
+  const eliminarCita = (index) => {
+    const nuevasCitas = citas.filter(function(cita, i) {
+      return i !== index;
+    });
+    
+    setCitas(nuevasCitas);
+  };
+
   return (
-    <div class="one-half column">
+    <div className="one-half column">
       <h2>Administra tus citas</h2>
-        <Cita
-          nombre="Nina"
-          propietario="Martin"
-          fecha="2021-08-05"
-          hora="08:20"
-          sintomas="Le duele la pierna"
-        />
-        <Cita
-          nombre="Sifon"
-          propietario="Flecha"
-          fecha="2023-08-05"
-          hora="09:24"
-          sintomas="Duerme mucho"
-        />
-        <Cita
-          nombre="Floki"
-          propietario="Ari"
-          fecha="2023-08-05"
-          hora="16:15"
-          sintomas="No está comiendo"
-        />
+      {citas.length === 0 ? (
+        <p></p>
+      ) : (
+        citas.map((cita, index) => (
+          <Cita
+            key={index}
+            index={index}
+            nombre={cita.mascota}
+            propietario={cita.propietario}
+            fecha={cita.fecha}
+            hora={cita.hora}
+            sintomas={cita.sintomas}
+            eliminarCita={eliminarCita}
+          />
+        ))
+      )}
     </div>
   );
 };
 
 export default Listado;
+
 
